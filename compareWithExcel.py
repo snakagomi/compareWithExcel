@@ -23,3 +23,7 @@ def sliceStartAndEndCharacter(targetString):
     slicedStartCharacterString = targetString[1:]
     slicedEndCharacterString = slicedStartCharacterString[:-1]
     return slicedEndCharacterString
+
+# メイン処理
+if __name__ == "__main__":
+    main()
