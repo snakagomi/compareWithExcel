@@ -11,6 +11,7 @@ def main():
 
     targetExcelBook  = openpyxl.load_workbook(slicedTargetExcelFilePath)
     targetExcelSheets = targetExcelBook.sheetnames
+    targetExcelSheets.remove('デッドロック対応')
     comparingExcelBook = openpyxl.load_workbook(slicedComparingExcelFilePath)
     comparedExcelSheets = comparingExcelBook.sheetnames
 
