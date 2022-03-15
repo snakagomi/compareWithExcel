@@ -11,11 +11,13 @@ def main():
 
     targetExcelBook  = openpyxl.load_workbook(slicedTargetExcelFilePath)
     targetExcelSheets = targetExcelBook.sheetnames
-    targetExcelSheets.remove('デッドロック対応')
+    extra_target_excel_sheets = [s for s in targetExcelSheets if "デッドロック対応" not in s]
+    print(extra_target_excel_sheets)
     comparingExcelBook = openpyxl.load_workbook(slicedComparingExcelFilePath)
     comparedExcelSheets = comparingExcelBook.sheetnames
+    print(comparedExcelSheets)
 
-    if targetExcelSheets == comparedExcelSheets:
+    if extra_target_excel_sheets == comparedExcelSheets:
         messagebox.showinfo('確認', '同じだから大丈夫')
     else:
         messagebox.showerror('エラー', 'シートが違うから確認して')
