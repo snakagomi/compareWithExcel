@@ -1,5 +1,4 @@
 import openpyxl
-import  tkinter
 from tkinter import simpledialog
 from tkinter import messagebox
 
